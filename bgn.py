@@ -33,7 +33,7 @@ class BigramNetwork:
         self.k = len(tokenized_data)
 
         self.xs = F.one_hot(xs, num_classes=self.n).float() # kxn
-        self.W = torch.tensor(torch.randn((self.n, self.n), dtype=torch.float32), requires_grad=True) # nxn
+        self.W = torch.randn((self.n, self.n), dtype=torch.float32, requires_grad=True) # nxn
 
     def train(self):
         
