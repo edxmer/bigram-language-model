@@ -4,7 +4,7 @@ import string
 ascii_lower_set = set(string.ascii_lowercase)
 
 cities = set()
-with open('worldcities.csv', 'r', encoding='utf-8') as f:
+with open('data/worldcities.csv', 'r', encoding='utf-8') as f:
     for line in f.readlines()[1:]:
         city_raw = line.split(',')[1].strip('"') # The city_ascii col, with the quotes removed
         # I only want cities that do not contain spaces, and only conatin latin letters,
@@ -15,5 +15,5 @@ with open('worldcities.csv', 'r', encoding='utf-8') as f:
 
 cities.remove('')
 
-with open('cities_normalized.txt', 'w') as f:
+with open('data/cities_normalized.txt', 'w') as f:
     f.write('\n'.join(cities))
